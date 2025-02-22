@@ -1,4 +1,4 @@
-# What I Learned About SQL and Databases
+# SQL Introduction and DML statements
 
 ## 1⃣ Introduction to SQL  
 - **SQL (Structured Query Language)** is used to query and manage relational databases.  
@@ -9,7 +9,20 @@
 
 ---
 
-## 2⃣ Retrieving Data with `SELECT`  
+## 2⃣ Data Manipulation Language (DML) – Working with Data
+DML statements manipulate data within tables:
+
+`INSERT` – Add new rows.
+
+`SELECT` – Retrieve data from tables.
+
+`UPDATE` – Modify existing data.
+
+`DELETE` – Remove data from tables.
+
+---
+
+## 3⃣ Retrieving Data with `SELECT`  
 ### Basic `SELECT` Statement  
 The `SELECT` statement is a **Database Query command** used to retrieve information from a table.  
 
@@ -46,9 +59,7 @@ SELECT book_id, title FROM book WHERE book_id = 'B1';
 🔹 **SQL keywords (`SELECT`, `FROM`, `WHERE`, etc.) are case insensitive**, but they are often written in **all caps** for readability.  
 🔹 **Table and column names may be case-sensitive depending on the database system.**  
 
----
-
-## 3⃣ Useful Expressions in `SELECT` Statements  
+## Useful Expressions in `SELECT` Statements  
 ### COUNT – Retrieves the number of rows that match a condition.  
 ```sql
 SELECT COUNT(*) FROM tablename;
