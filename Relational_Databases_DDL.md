@@ -1,4 +1,4 @@
-# Introduction to Relational Databases
+# Introduction to Relational Databases and DDL Statements
 
 ## Overview
 
