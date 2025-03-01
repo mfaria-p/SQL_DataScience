@@ -5,7 +5,7 @@ While it is possible to fetch data from a database and perform operations on it 
 
 Using these functions can reduce network traffic, improve efficiency, and speed up processing, especially when dealing with large datasets. Additionally, databases support user-defined functions, which are an advanced topic beyond this lesson.
 
-In this guide, we will explore built-in SQL functions using the `PETRESCUE` table, which records rescue transactions, including columns such as `ID`, `ANIMAL`, `QUANTITY`, `COST`, and `RESCUE_DATE`.
+Here I will explore built-in SQL functions using the `PETRESCUE` table, which records rescue transactions, including columns such as `ID`, `ANIMAL`, `QUANTITY`, `COST`, and `RESCUE_DATE`.
 
 ---
 
