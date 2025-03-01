@@ -1,4 +1,4 @@
-# README: Using String Patterns, Ranges, Sets and Refining Results in SQL Queries
+# Using String Patterns, Ranges, Sets and Refining Results in SQL Queries
 
 ## Introduction
 A Database Management System (DBMS) not only stores data but also facilitates efficient retrieval. The `SELECT` statement is fundamental for querying data from a database. While retrieving all rows is straightforward (`SELECT * FROM table_name`), filtering data using conditions is often necessary. This document explores how to simplify and optimize SQL queries using string patterns, ranges, sets, and grouping.
