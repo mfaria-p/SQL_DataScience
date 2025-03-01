@@ -122,6 +122,13 @@ To present the output in `YYYY-MM-DD` format:
 SELECT FROM_DAYS(DATEDIFF(CURRENT_DATE, RESCUE_DATE)) FROM PETRESCUE;
 ```
 
+### 5. Calculating Age
+To calculate the age of an individual or an entity based on a birth date:
+```sql
+SELECT YEAR(FROM_DAYS(DATEDIFF(CURRENT_DATE, B_DATE))) AS AGE FROM EMPLOYEES;
+```
+This query computes the difference in days between the current date and the birth date, converts it into a date format, and extracts the year, effectively returning the age in years.
+
 ---
 
 ## Conclusion
