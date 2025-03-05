@@ -1,186 +1,45 @@
-# SQL Introduction and DML statements
+# SQL for Data Science - Course Projects
 
-## 1⃣ Introduction to SQL  
-- **SQL (Structured Query Language)** is used to query and manage relational databases.  
-- **Data** is a collection of facts (words, numbers, pictures) and is essential in various industries.  
-- **Databases** store and organize data securely for quick access.  
-- **Relational Databases** store data in tables with columns and rows, allowing relationships between tables.  
-- **RDBMS (Relational Database Management System)** is software that manages relational databases (e.g., MySQL, Oracle, DB2).  
+This project showcases the work I completed during the **SQL for Data Science** course offered by IBM on edX. It includes various exercises and projects demonstrating my learning journey with SQL and Python for database management and analysis.
 
----
+## Project Overview
 
-## 2⃣ Data Manipulation Language (DML) – Working with Data
-DML statements manipulate data within tables:
+The project is structured to reflect my progression in the course, starting with **MySQL** and later transitioning to **SQLite and Python**. The initial theoretical modules focus on MySQL syntax, where I used **phpMyAdmin** to create and manage databases using SQL scripts. Later, I shifted my focus to Python and Jupyter Notebooks for data analysis with SQLite, leading to the projects shown in the practical implementation. Although the course primarily utilized Jupyter Notebook, I chose to complete all Python-related projects in **Google Colab**, as I am more familiar with that environment.
 
-`INSERT` – Add new rows.
+### **Key Learning Areas:**
 
-`SELECT` – Retrieve data from tables.
+- **MySQL Database Management:** Creating, modifying, and deleting tables using SQL scripts in **phpMyAdmin**.
+- **SQL Query Techniques:** Refining query results using string patterns, sorting, grouping, and built-in database functions.
+- **Working with Multiple Tables:** Using **subqueries, joins, and nested selects** to retrieve meaningful data.
+- **Metadata Retrieval:** Extracting database schema information from MySQL and SQLite.
+- **Python & SQLite Integration:** Managing SQLite databases using Python with **DB-API, SQL Magic, and Pandas**.
+- **Real-World Data Analysis:** Applying SQL and Python to analyze datasets from Chicago Public Schools and socioeconomic indicators.
 
-`UPDATE` – Modify existing data.
+## **Project Structure**
 
-`DELETE` – Remove data from tables.
+### **Markdown Files** (SQL Concepts & Implementation)
 
----
+- **`01_Relational_Databases_DDL.md`** – Introduction to relational databases and **Data Definition Language (DDL)** (MySQL).
+- **`02_Refining_Results.md`** – Techniques for refining SQL query results (MySQL).
+- **`03_Built_in_DataBase_Functions.md`** – Overview of **aggregate, scalar, string, and date/time** functions (MySQL).
+- **`04_SubQueries_Nested_Selects.md`** – Explanation and examples of **subqueries and nested selects**.
+- **`05_Multiple_Tables.md`** – Working with **multiple tables using joins and subqueries**.
+- **`06_SQLite_Python.md`** – Accessing SQLite databases using Python (**DB-API, SQL Magic, and Pandas**).
+- **`07_Metadata_SQL.md`** – Retrieving database metadata from **SQLite and MySQL**.
 
-## 3⃣ Retrieving Data with `SELECT`  
-### Basic `SELECT` Statement  
-The `SELECT` statement is a **Database Query command** used to retrieve information from a table.  
+### **Jupyter Notebooks** (Practical Implementation)
 
-#### Syntax:
-```sql
-SELECT COLUMN1, COLUMN2 FROM TABLE_1;
-```
-To retrieve all columns from a table:
-```sql
-SELECT * FROM TABLE_1;
-```
+- **`00_SQLite_with_Python.ipynb`** – Creating and accessing SQLite databases using Python.
+- **`01_RealWorldDataset.ipynb`** – **Chicago Public Schools** performance data analysis.
+- **`02_RealWorldDataset.ipynb`** – Socioeconomic indicators analysis for Chicago.
+- **`03_RealWorldDataset.ipynb`** – Further analysis of real-world datasets using SQL and Python.
 
-### Using `WHERE` Clause for Filtering  
-The `WHERE` clause filters the data based on a predicate (condition).  
+## **Learning Outcomes**
 
-#### Syntax:
-```sql
-SELECT COLUMN1, COLUMN2 FROM TABLE_1 WHERE <predicate>;
-```
-#### Example:
-Retrieve the title of the book with `book_id = 'B1'`:
-```sql
-SELECT book_id, title FROM book WHERE book_id = 'B1';
-```
+By working through this project, I gained:
 
-### Comparison Operators in SQL  
-- `=` → Equal to  
-- `>` → Greater than  
-- `<` → Less than  
-- `>=` → Greater than or equal to  
-- `<=` → Less than or equal to  
-- `<>` or `!=` → Not equal to  
+- Hands-on experience with **MySQL, SQLite, and Python** for database management.
+- A strong understanding of **SQL queries, data extraction, and data analysis**.
+- Practical skills in analyzing **real-world datasets** using SQL and Python.
 
-🔹 **SQL keywords (`SELECT`, `FROM`, `WHERE`, etc.) are case insensitive**, but they are often written in **all caps** for readability.  
-🔹 **Table and column names may be case-sensitive depending on the database system.**  
-
-## Useful Expressions in `SELECT` Statements  
-### COUNT – Retrieves the number of rows that match a condition.  
-```sql
-SELECT COUNT(*) FROM tablename;
-```
-```sql
-SELECT COUNT(COUNTRY) FROM MEDALS WHERE COUNTRY = 'CANADA';
-```
-
-### DISTINCT – Removes duplicate values from a result set.  
-```sql
-SELECT DISTINCT columnname FROM tablename;
-```
-
-### LIMIT – Restricts the number of rows retrieved.  
-```sql
-SELECT * FROM tablename LIMIT 10;
-```
-
-### OFFSET – Skips a specific number of rows before retrieving results.  
-```sql
-SELECT * FROM MEDALS LIMIT 5 OFFSET 10;
-```
-🔹 **Important:** `OFFSET` **must** be written **after** `LIMIT`.  
-
----
-
-## 4⃣ Inserting and Modifying Data  
-
-### INSERT INTO – Adding Data to a Table  
-```sql
-INSERT INTO tablename (column1, column2, column3)
-VALUES (value1, value2, value3);
-```
-
-### UPDATE – Modifying Existing Data  
-```sql
-UPDATE tablename
-SET column1 = value1, column2 = value2
-WHERE condition;
-```
-
-### DELETE – Removing Data from a Table  
-```sql
-DELETE FROM tablename WHERE condition;
-```
-#### ⚠️ **Important:** If you run a `DELETE FROM` statement on a table **without a `WHERE` clause**, **all rows in the table will be deleted**. However, the **table structure and its columns remain intact**.
-
----
-
-## 5⃣ SQL Keyword Order Matters  
-SQL statements must follow a specific order:  
-```sql
-SELECT column1, column2
-FROM tablename
-WHERE condition
-GROUP BY column
-HAVING condition
-ORDER BY column
-LIMIT number OFFSET number;
-```
-
----
-
-## 6⃣ Using Quotes in SQL (`'` vs. `"`)  
-
-### Single Quotes (`'`) – For String Literals  
-- **Use single quotes for text (string) values in queries.**  
-- **Example:**  
-  ```sql
-  SELECT * FROM FilmLocations WHERE Location = 'City Hall';
-  ```
-- **Wrong Usage:**  
-  ```sql
-  SELECT * FROM FilmLocations WHERE Location = "City Hall"; -- ❌ Might cause errors
-  ```
-🔹 **Key Rule:** Always use single quotes (`'`) around string values.
-
-### Double Quotes (`"`) – For Identifiers (Column and Table Names)  
-- **Use double quotes if the column or table name:**  
-  - Contains spaces or special characters.  
-  - Is case-sensitive.  
-  - Matches an SQL reserved keyword.  
-
-- **Example:**  
-  ```sql
-  SELECT "First Name", "Last Name" FROM "User Data";
-  ```
-- **Example (reserved keyword as column name):**  
-  ```sql
-  SELECT "Order", "Date" FROM Sales;
-  ```
-
----
-
-## 7⃣ Installing and Running Datasette  
-Datasette is a tool for exploring and publishing data.  
-
-### Installation:  
-```sh
-pip install datasette
-```
-
-### Running Datasette:  
-```sh
-datasette
-```
-
-### Accessing a Database in Datasette  
-To open a specific SQLite database:  
-```sh
-datasette my_database.db
-```
-Access it in your browser at:  
-```
-http://127.0.0.1:8001
-```
-🔹 Click on the database name to view available tables.  
-🔹 Click on a table to browse its data.  
-🔹 You can run SQL queries directly from the Datasette interface.  
-
----
-
-This knowledge helps in understanding how data is stored, managed, retrieved, and accessed efficiently using SQL and Datasette. 🚀  
-
+This project serves as a portfolio of my SQL and Python database management skills developed through the course.
